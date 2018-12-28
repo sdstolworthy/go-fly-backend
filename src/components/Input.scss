@@ -1,0 +1,14 @@
+.input-field {
+  height: 2rem;
+  justify-content: space-between;
+  display: flex;
+  margin: 10px 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  label {
+    align-self: center;
+  }
+  input {
+    border-radius: 5px;
+    border: solid 1px gray;
+  }
+}

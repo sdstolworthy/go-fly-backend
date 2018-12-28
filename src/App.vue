@@ -1,28 +1,71 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <form>
+      <span>{{ country }}</span>
+      <input-field
+        label="Country"
+        v-model="country"
+      />
+      <span>{{ locale }}</span>
+      <input-field
+        label="Locale"
+        v-model="locale"
+      />
+      <span>{{ originPlace }}</span>
+      <input-field
+        label="Origin Place"
+        v-model="originPlace"
+      />
+      <span>{{ originPlace }}</span>
+      <input-field
+        label="Destination"
+        v-model="destinationPlace"
+      />
+      <span>{{ destinationPlace }}</span>
+      <input-field
+        label="Outbound Date"
+        v-model="outboundDate"
+      />
+      <span>{{ outboundDate }}</span>
+      <input-field
+        label="Adults"
+        v-model="adults"
+      />
+      <span>{{ adults }}</span>
+      <input-field
+        label="Inbound Date"
+        v-model="inboundDate"
+      />
+      <span>{{ inboundDate }}</span>
+    </form>
+    <button class="button" type="submit" @click="submit">Test</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import InputField from "./components/Input.vue";
+import Skyscanner from './library/services/skyscanner'
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    "input-field": InputField
+  },
+  methods: {
+    submit: () => {
+      console.log('test')
+      return Skyscanner.getQuotes()
+    }
+  },
+  data() {
+    return {
+      country: "",
+      locale: "",
+      originPlace: "",
+      destinationPlace: "",
+      outboundDate: "",
+      adults: "",
+      inboundDate: "",
+    };
   }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
