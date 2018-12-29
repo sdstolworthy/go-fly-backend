@@ -7,7 +7,7 @@ const defaultParameters = () => ({
   locale: 'en-US',
   originPlace: 'SLC-sky',
   destinationPlace: 'JFK-sky',
-  outbandDate: 'anytime',
+  outboundDate: 'anytime',
   inboundDate: 'anytime',
 })
 
