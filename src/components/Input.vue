@@ -1,23 +1,21 @@
 <template>
   <b-field :label="label">
-    <b-input type="text" :value="value" @change="$emit('change', $event.target.value)"/>
+    <b-input :value="value" :type="type || 'text'" @input="$emit('update', $event)"/>
   </b-field>
 </template>
 
 <script>
-import './Input.scss'
+import "./Input.scss";
+
 export default {
   name: "InputField",
-  model: {
-    prop: "value",
-    event: "change"
-  },
   props: {
     label: {
       type: String,
       required: true
     },
-    value: String
+    type: String,
+    value: String | Number
   }
 };
 </script>
